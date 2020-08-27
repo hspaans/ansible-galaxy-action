@@ -1,5 +1,5 @@
 ---
-name: 'Ansible Galaxy Role Import'
+name: 'Ansible Galaxy Role Importer'
 description: 'Github Action for import your role into Ansible Galaxy.'
 
 inputs:
