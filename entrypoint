@@ -3,9 +3,9 @@ set -e
 
 command_string="ansible-galaxy role import"
 
-if [ -n "$action_api_key" ]
+if [ -n "$ACTION_API_KEY" ]
 then
-	command_string="$command_string --api-key $action_api_key ${GITHUB_REPOSITORY%/*} ${GITHUB_REPOSITORY#*/}"
+	command_string="$command_string --api-key $ACTION_API_KEY ${GITHUB_REPOSITORY%/*} ${GITHUB_REPOSITORY#*/}"
 fi
 
 echo "Command: $command_string"

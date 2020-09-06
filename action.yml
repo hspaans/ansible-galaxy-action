@@ -11,7 +11,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
-    action_api_key: ${{ inputs.api_key }}
+    ACTION_API_KEY: ${{ inputs.api_key }}
 
 branding:
   icon: 'book'  
