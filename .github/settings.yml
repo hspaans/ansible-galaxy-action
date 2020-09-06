@@ -1,6 +1,6 @@
 ---
 repository:
-  description: GitHub Action to import role into Ansible Galaxy
-  topics: github-action, ansible, ansible-galaxy, ansible-role
+  description: GitHub Action to import role or collection into Ansible Galaxy
+  topics: github-action, ansible, ansible-galaxy, ansible-role, ansible-collection
   delete_branch_on_merge: true
   has_wiki: false
