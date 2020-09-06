@@ -17,7 +17,10 @@ name: Lint Code Base
 on:
   push:
     branches-ignore:
-      - 'master'
+      - master
+  pull_request:
+    branches:
+      - master
 
 ###############
 # Set the Job #
@@ -48,3 +51,4 @@ jobs:
           VALIDATE_ALL_CODEBASE: true
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ANSIBLE_DIRECTORY: /
