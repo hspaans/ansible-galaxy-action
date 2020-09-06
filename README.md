@@ -5,7 +5,7 @@ GitHub Action for Ansible Galaxy
 ## Usage
 
 ```yaml
-name: Release Ansible Role to Galaxy
+name: Release to Ansible Galaxy
 
 on:
   push:
