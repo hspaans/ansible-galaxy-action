@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        
+
       - name: Release Ansible Role to Galaxy
         uses: hspaans/ansible-galaxy-action@v0.1.1
         with:
