@@ -1,4 +1,4 @@
-FROM python:3.8-slim
+FROM python:3.9.0-slim
 
 LABEL repository="https://github.com/hspaans/ansible-galaxy-action"
 LABEL homepage="https://github.com/hspaans/ansible-galaxy-action"
