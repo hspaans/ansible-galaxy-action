@@ -1,5 +1,7 @@
 FROM python:3.9.0-slim
 
+LABEL org.opencontainers.image.source=https://github.com/hspaans/ansible-galaxy-action
+
 LABEL repository="https://github.com/hspaans/ansible-galaxy-action"
 LABEL homepage="https://github.com/hspaans/ansible-galaxy-action"
 LABEL maintainer="Hans Spaans <hans@dailystuff.nl>"
