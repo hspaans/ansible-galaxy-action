@@ -16,7 +16,7 @@ on:
 
 env:
   # TODO: Change variable to your image's name.
-  IMAGE_NAME: latexmk-action
+  IMAGE_NAME: ansible-galaxy-action
 
 jobs:
   # Run tests.
