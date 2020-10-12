@@ -6,7 +6,9 @@ LABEL repository="https://github.com/hspaans/ansible-galaxy-action"
 LABEL homepage="https://github.com/hspaans/ansible-galaxy-action"
 LABEL maintainer="Hans Spaans <hans@dailystuff.nl>"
 
-RUN pip install ansible==2.9.12
+COPY requirements.txt .
+
+RUN pip install -r requirements.txt
 
 COPY entrypoint /usr/local/bin/entrypoint
 RUN chmod 555 /usr/local/bin/entrypoint
