@@ -1,5 +1,6 @@
 FROM python:3.9.0-slim
 
+LABEL org.opencontainers.image.description="Ansible container for GitHub Action ansible-galaxy"
 LABEL org.opencontainers.image.source=https://github.com/hspaans/ansible-galaxy-action
 
 LABEL repository="https://github.com/hspaans/ansible-galaxy-action"
