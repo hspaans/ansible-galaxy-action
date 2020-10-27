@@ -1,6 +1,6 @@
 ---
-name: 'Ansible Galaxy Role Importer'
-description: 'Github Action for import your role into Ansible Galaxy.'
+name: 'Ansible Galaxy importer'
+description: 'Github Action for import your role or collection into Ansible Galaxy.'
 
 inputs:
   api_key:
