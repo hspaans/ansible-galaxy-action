@@ -9,7 +9,7 @@ LABEL maintainer="Hans Spaans <hans@dailystuff.nl>"
 
 COPY requirements.txt .
 
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY entrypoint /usr/local/bin/entrypoint
 RUN chmod 555 /usr/local/bin/entrypoint
