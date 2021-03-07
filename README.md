@@ -5,23 +5,27 @@ GitHub Action for Ansible Galaxy
 ## Usage
 
 ```yaml
-name: Release Ansible Role to Galaxy
+---
+name: Publish on Ansible Galaxy
 
 on:
   push:
     tags:
       - "v*"
+    branches:
+      - master
 
 jobs:
-  build:
+  publish:
+    name: Publish on Ansible Galaxy
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout Code
         uses: actions/checkout@v2
 
       - name: Release Ansible Role to Galaxy
-        uses: hspaans/ansible-galaxy-action@v0.2.6
+        uses: hspaans/ansible-galaxy-action@v0.2.7
         with:
           api_key: ${{ secrets.galaxy_api_key }}
 ```

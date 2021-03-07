@@ -9,10 +9,10 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/hspaans/ansible-galaxy-action:0.2.6'
+  image: 'docker://ghcr.io/hspaans/ansible-galaxy-action:0.2.7'
   env:
     ACTION_API_KEY: ${{ inputs.api_key }}
 
 branding:
-  icon: 'book'  
+  icon: 'book'
   color: 'gray-dark'
