@@ -55,7 +55,10 @@ jobs:
   Anchore-Build-Scan:
     needs: lint
     name: Anchore-Build-Scan
+    
     runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    
     steps:
       - name: Checkout the code
         uses: actions/checkout@v2
