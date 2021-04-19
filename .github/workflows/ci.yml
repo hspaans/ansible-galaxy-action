@@ -41,7 +41,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout Code
+        uses: actions/checkout@v2
 
       - name: Run tests
         run: |
@@ -53,12 +54,12 @@ jobs:
           fi
 
   Anchore-Build-Scan:
-    needs: lint
+    needs: test
     name: Anchore-Build-Scan
-    
+
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
-    
+
     steps:
       - name: Checkout the code
         uses: actions/checkout@v2
@@ -88,10 +89,8 @@ jobs:
     if: github.event_name == 'push'
 
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Build image
-        run: docker build . --file Dockerfile --tag $IMAGE_NAME
+      - name: Checkout Code
+        uses: actions/checkout@v2
 
       - name: Login to Packages Container registry
         uses: docker/login-action@v1 
@@ -99,6 +98,9 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build image
+        run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
       - name: Push image to GitHub Container Registry
         run: |
