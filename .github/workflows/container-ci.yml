@@ -8,4 +8,4 @@ on:
 
 jobs:
   container-ci:
-    uses: hspaans/.github/.github/workflows/container-ci.yml@v0.2.0
+    uses: hspaans/.github/.github/workflows/container-ci.yml@master
