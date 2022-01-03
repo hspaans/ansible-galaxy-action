@@ -4,17 +4,41 @@ updates:
   - package-ecosystem: docker
     directory: /
     schedule:
-      interval: weekly
+      interval: monhtly
+    target-branch: master
     open-pull-requests-limit: 10
 
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: monthly
+    target-branch: master
     open-pull-requests-limit: 10
 
   - package-ecosystem: pip
     directory: /
     schedule:
-      interval: weekly
+      interval: monhtly
+    target-branch: master
+    open-pull-requests-limit: 10
+    
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: monhtly
+    target-branch: v1
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    target-branch: v1
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: monthly
+    target-branch: v1
     open-pull-requests-limit: 10
