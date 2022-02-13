@@ -21,7 +21,7 @@ updates:
       interval: weekly
     target-branch: master
     open-pull-requests-limit: 10
-    
+
   - package-ecosystem: docker
     directory: /
     schedule:
