@@ -1,4 +1,4 @@
-FROM python:3.11.2-slim
+FROM python:3.11.3-slim
 
 LABEL org.opencontainers.image.description="Ansible container for GitHub Action ansible-galaxy"
 LABEL org.opencontainers.image.source=https://github.com/hspaans/ansible-galaxy-action
