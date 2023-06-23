@@ -6,7 +6,12 @@ command_string="ansible-galaxy role import"
 if [ -n "$ACTION_API_KEY" ]
 then
 	command_string="$command_string --api-key $ACTION_API_KEY ${GITHUB_REPOSITORY%/*} ${GITHUB_REPOSITORY#*/}"
+else
+	echo "Error: API-key is empty"
+	exit 1
 fi
 
 echo "Command: $command_string"
-eval "$command_string"
+"($command_string)"
+
+exit $?
