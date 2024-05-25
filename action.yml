@@ -1,17 +1,43 @@
 ---
+author: 'hspaans'
 name: 'Ansible Galaxy Role Importer'
 description: 'Github Action for import your role into Ansible Galaxy.'
 
 inputs:
   api_key:
-    description: 'Ansible Galaxy API Key'
+    description: |
+      Ansible Galaxy API Key
+      Source: https://galaxy.ansible.com/me/preferences
     required: true
+  python_version:
+    description: |
+      Python version to use
+      Default: 3
+    required: false
+    default: '3'
+  ansible_version:
+    description: |
+      Ansible version to use
+      Default: latest
+    required: false
+    default: 'latest'
 
 runs:
-  using: 'docker'
-  image: 'docker://ghcr.io/hspaans/ansible-galaxy-action:latest'
-  env:
-    ACTION_API_KEY: ${{ inputs.api_key }}
+  using: 'composite'
+  steps:
+    - name: 'Install dependencies'
+      shell: bash
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install ansible==$ANSIBLE_VERSION
+      env:
+        ANSIBLE_VERSION: ${{ inputs.ansible_version }}
+
+    - name: 'Install dependencies'
+      shell: bash
+      run: entrypoint.sh
+      env:
+        ACTION_API_KEY: ${{ inputs.api_key }}
 
 branding:
   icon: 'book'

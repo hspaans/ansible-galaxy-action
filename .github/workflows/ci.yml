@@ -1,0 +1,47 @@
+---
+name: Container CI
+
+on:
+  push:
+    branches:
+      - master
+      - v*
+    tags:
+      - v*
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches:
+      - master
+  schedule:
+    - cron: "33 17 * * 3"
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Lint Code Base
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run ShellCheck
+        uses: ludeeus/action-shellcheck@master
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pymarkdownlnt yamllint
+
+      - name: Lint with yamllint
+        run: |
+          yamllint . --format github
+
+      - name: Lint with pymarkdownlnt
+        run: |
+          pymarkdownlnt scan `git ls-files '*.md' ':!:*TEMPLATE/*md'`

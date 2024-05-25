@@ -8,9 +8,10 @@ GitHub Action to import role into Ansible Galaxy.
 
 Following parameters can be used as `step.with` keys:
 
-| Name      | Type   | Default | Description            |
-| --------- | ------ | ------- | ---------------------- |
-| `api_key` | String |         | Ansible Galaxy API-key |
+| Name              | Type   | Default  | Description            |
+| ----------------- | ------ | -------- | ---------------------- |
+| `api_key`         | String |          | Ansible Galaxy API-key |
+| `ansible_version` | String | 'latest' | Ansible version        |
 
 ## Example
 
@@ -35,7 +36,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Release Ansible Role to Galaxy
-        uses: hspaans/ansible-galaxy-action@v1
+        uses: hspaans/ansible-galaxy-action@v2.0.0
         with:
           api_key: ${{ secrets.galaxy_api_key }}
 ```
