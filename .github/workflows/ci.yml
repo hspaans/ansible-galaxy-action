@@ -1,5 +1,5 @@
 ---
-name: Container CI
+name: CI
 
 on:
   push:
@@ -9,11 +9,8 @@ on:
     tags:
       - v*
   pull_request:
-    # The branches below must be a subset of the branches above
     branches:
       - master
-  schedule:
-    - cron: "33 17 * * 3"
 
 permissions:
   contents: read
