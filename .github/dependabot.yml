@@ -1,23 +1,15 @@
 ---
 version: 2
 updates:
-  - package-ecosystem: docker
-    directory: /
-    schedule:
-      interval: weekly
-    target-branch: master
-
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
     target-branch: master
-
-  - package-ecosystem: pip
-    directory: /
-    schedule:
-      interval: weekly
-    target-branch: master
+    groups:
+      devcontainer:
+        patterns:
+          - "*"    
 
   - package-ecosystem: docker
     directory: /

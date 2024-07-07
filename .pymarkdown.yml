@@ -1,0 +1,6 @@
+---
+plugins:
+  md013:
+    enabled: false
+  md024:
+    enabled: false
