@@ -9,7 +9,7 @@ updates:
     groups:
       devcontainer:
         patterns:
-          - "*"    
+          - "*"
 
   - package-ecosystem: docker
     directory: /
