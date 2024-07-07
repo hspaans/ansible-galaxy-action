@@ -11,7 +11,6 @@ Following parameters can be used as `step.with` keys:
 | Name              | Type   | Default  | Description            |
 | ----------------- | ------ | -------- | ---------------------- |
 | `api_key`         | String |          | Ansible Galaxy API-key |
-| `ansible_version` | String | 'latest' | Ansible version        |
 
 ## Example
 
