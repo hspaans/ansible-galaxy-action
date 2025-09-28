@@ -12,8 +12,6 @@ on:
     # The branches below must be a subset of the branches above
     branches:
       - master
-  schedule:
-    - cron: "33 17 * * 3"
 
 permissions:
   contents: read
@@ -21,17 +19,17 @@ permissions:
 jobs:
   lint:
     name: Lint Code Base
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Run ShellCheck
         uses: ludeeus/action-shellcheck@master
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
 
       - name: Install dependencies
         run: |
