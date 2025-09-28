@@ -10,21 +10,3 @@ updates:
       github-actions:
         patterns:
           - "*"
-
-  - package-ecosystem: docker
-    directory: /
-    schedule:
-      interval: monthly
-    target-branch: v1
-
-  - package-ecosystem: github-actions
-    directory: /
-    schedule:
-      interval: monthly
-    target-branch: v1
-
-  - package-ecosystem: pip
-    directory: /
-    schedule:
-      interval: monthly
-    target-branch: v1
