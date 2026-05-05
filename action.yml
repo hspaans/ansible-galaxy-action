@@ -17,7 +17,7 @@ runs:
       shell: bash
       run: |
         python -m pip install --upgrade pip
-        python -m pip install "ansible-core
+        python -m pip install ansible-core
 
     - name: "Install dependencies"
       shell: bash
